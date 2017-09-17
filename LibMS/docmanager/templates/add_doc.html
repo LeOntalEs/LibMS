@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Hello, {{ user.username }} </h1>
+    <form method="GET" action="{% url 'logout' %}">
+        <input type="submit" name="logout" value="Log out" class=" btn btn-default" />
+    </form> 
+    <hr>
+    <h2>Add New Documents</h2>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}  

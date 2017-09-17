@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Library Management System {% endblock %}
+{% block content %}
+<h2>Documenst List</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+    </tr>
+
+    {% for doc in documents %}
+    <tr>
+        <td>{{ doc.ISBN }}</td>
+        <td>{{ doc.title }}</td>    
+        <td>{{ doc.author }}</td>    
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
